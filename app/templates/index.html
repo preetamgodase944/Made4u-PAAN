@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      {% load static %}
+      <meta charset="UTF-8">
+      <title>Made4You</title>
+      <link rel="stylesheet" href="style1.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+   </head>
+   <body>
+
+    <section>
+      <nav>
+         <div class="logo">
+            <a href="#home"><img src="{% static 'images/ourofficiallogo.jpg' %}" alt=""></a>
+         </div id="home">
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+            <li><a href="#about-us">About</a></li>
+         </ul>
+      </nav>
+      
+      <div class="text-box">
+        <h1>Made4You Pvt Ltd<span></span></h1>
+        <p>M4Y is a digital service provider that aims to provide software,
+            designing and <br> marketing solutions to individuals and
+            businesses. At M4Y, it is believed that <br> service and quality is the
+            key to success. Founded and Funded by Graphic <br> designers
+            from Jahirathu Junction, M4Y has now set a new <br> path towards
+            Digital Solutions.</p>
+    </div>
+
+    </section>
+
+    <!--flip-->
+
+    <section class="services" id="services">
+
+        <h1>Our services</h1>
+       
+            
+    
+        <div class="bodys">
+            <div class="wrapper">
+                <div class="box">
+                   <div class="front-face">
+                      <div class="icon">
+                         <i class="fas fa-chalkboard-teacher"></i>
+                      </div>
+                      <span>Consultancy</span>
+                   </div>
+                   <div class="back-face">
+                      <span>Consultancy</span>
+                      <p>
+                        We are here to provide you with expert advice on your design and development requirements.
+                      </p>
+                   </div>
+                </div>
+                <div class="box">
+                   <div class="front-face">
+                      <div class="icon">
+                         <i class="fas fa-code"></i>
+                      </div>
+                      <span>Development</span>
+                   </div>
+                   <div class="back-face">
+                      <span>Development</span>
+                      <p>
+                        We develop responsive, functional and super-fast websites. We keep User Experience in mind while creating websites. A website should load quickly and should be accessible even on a small view-port and slow internet connection.
+                      </p>
+                   </div>
+                </div>
+                <div class="box">
+                   <div class="front-face">
+                      <div class="icon">
+                         <i class="fas fa-video"></i>
+                      </div>
+                      <span>Videos</span>
+                   </div>
+                   <div class="back-face">
+                      <span>Videos</span>
+                      <p>
+                        We create a polished professional video that impresses your audience.
+                      </p>
+                   </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+
+    <!-- contact form-->
+
+    <section class="form-body">
+        <div class="container">
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                  <form method="POST">
+                     {% csrf_token %}
+                    <h2 id="contact-us">Contact Us</h2>
+                    <input name="name" type="text" class="field" placeholder="Name" required>
+                    <input name="email" type="email" class="field" placeholder="Email" required>
+                    <input name="phonenumber" type="number" class="field" placeholder="Phone Number" required>
+                    <textarea name="message" placeholder="Message" class="field"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+        <div id="status" class="success">Thank you for contacting us!</div>
+    </section>
+
+    <!--footer-->
+
+    <section class="space">
+        <footer>
+            <div class="footer-content">
+                <h3 id="about-us">Made4You</h3>
+                <p>M4Y is a digital service provider that aims to provide software,
+                    designing and  marketing solutions to individuals and
+                    businesses.</p>
+                
+                 <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    
+                
+                <p class="socials">+91 9900777123<br>
+                  Chat with us, and get a quotation ASAP</p>
+                
+            </div>
+        </footer>
+    </section>
+
+
+
+
+
+   </body>
+</html>

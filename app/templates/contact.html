@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+     {% load static %}
+      <meta charset="UTF-8">
+      <title>Made4You</title>
+      <link rel="stylesheet" href="contact.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+   </head>
+   <body>
+
+
+      <nav>
+         <div class="logo">
+            <a href="#home"><img src="{% static 'images/ourofficiallogo.jpg' %}" alt=""></a>
+         </div id="home">
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="#about-us">About</a></li>
+         </ul>
+      </nav>
+
+      <section class="back">
+        <div class="container">
+            <div class="content">
+              <div class="image-box">
+               <img src="{% static 'images/contact-me.png' %}" alt="">
+              </div>
+            <form method="POST">
+              {% csrf_token %}
+              <div class="topic">Send us a message</div>
+              <p class="desc">We would love to hear it from you on your query.</p>
+              <div class="input-box">
+                <input name="name" type="text" required>
+                <label>Enter your name</label>
+              </div>
+              <div class="input-box">
+                <input name="email" type="email" required>
+                <label>Enter your email</label>
+              </div>
+              <div class="input-box">
+                <input name="phonenumber" type="number" required>
+                <label>Enter your Phone Number</label>
+              </div>
+              <div class="message-box">
+                <textarea name="message" id="" cols="30" rows="10"></textarea>
+                <label>Enter your message</label>
+              </div>
+              <div class="input-box">
+                <input type="submit" value="Send Message">
+              </div>
+            </form>
+           
+          </div>
+          <div id="status" class="success">Thank you for contacting us!</div>
+          </div>
+          
+
+      </section>
+      <!--footer-->
+
+    <section class="space">
+      <footer>
+          <div class="footer-content">
+              <h3 id="about-us">Made4You</h3>
+              <p>M4Y is a digital service provider that aims to provide software,
+                  designing and  marketing solutions to individuals and
+                  businesses.</p>
+                  <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    
+                
+                  <p class="socials">+91 9900777123<br>
+                    Chat with us, and get a quotation ASAP</p>
+          </div>
+      </footer>
+  </section>
+
+
+
+
+
+ </body>
+</html>
+
+
+
+
+   </body>
+</html>

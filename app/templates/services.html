@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <title>Services</title>
+  <link rel="stylesheet" href="{% static 'services.css' %}">
+
+</head>
+<body>
+  <nav>
+    <div class="logo">
+       <a href="#home"><img src="{% static 'images/ourofficiallogo.jpg' %}" alt=""></a>
+    </div id="home">
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+    <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+       <li><a href="{% url 'index' %}">Home</a></li>
+       <li><a href="{% url 'contact' %}">Contact us</a></li>
+       <li><a href="#about-us">About</a></li>
+    </ul>
+ </nav>
+
+ <!-- First Card -->
+ <section>
+  <h1> Services </h1>
+  <div class="services">
+    <div class="service-1">
+      <div class="shapes">
+        <div class="shape-1 right"></div>
+        <div class="shape-2 right"></div>
+        <div class="shape-3 right"></div>
+      </div>
+      <div class="img">
+        <img src="{% static 'images/operator.png' %}" alt="IMAGE">
+      </div>
+      <div class="description">
+        <h2> Consultancy </h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit incidunt quibusdam error illum quia sit esse adipisci ducimus maiores minus. </p>
+      </div>
+      <div class="shapes">
+        <div class="shape-4"></div>
+        <div class="shape-5"></div>
+        <div class="shape-6"></div>
+      </div>
+    </div>
+
+    <!-- Second Card -->
+    <div class="service-1">
+      <div class="shapes">
+        <div class="shape-1 right"></div>
+        <div class="shape-2 right"></div>
+        <div class="shape-3 right"></div>
+      </div>
+      <div class="img">
+        <img src="{% static 'images/web-development.png' %}" alt="IMAGE">
+      </div>
+      <div class="description">
+        <h2> Development </h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit incidunt quibusdam error illum quia sit esse adipisci ducimus maiores minus. </p>
+      </div>
+      <div class="shapes">
+        <div class="shape-4"></div>
+        <div class="shape-5"></div>
+        <div class="shape-6"></div>
+      </div>
+    </div>
+
+    <!-- Third Card -->
+    <div class="service-1">
+      <div class="shapes">
+        <div class="shape-1 right"></div>
+        <div class="shape-2 right"></div>
+        <div class="shape-3 right"></div>
+      </div>
+      <div class="img">
+        <img src="{% static 'images/video-camera.png' %}" alt="IMAGE">
+      </div>
+      <div class="description">
+        <h2> Videos </h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit incidunt quibusdam error illum quia sit esse adipisci ducimus maiores minus. </p>
+      </div>
+      <div class="shapes">
+        <div class="shape-4"></div>
+        <div class="shape-5"></div>
+        <div class="shape-6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--footer-->
+
+<section class="space">
+  <footer>
+      <div class="footer-content">
+          <h3 id="about-us">Made4You</h3>
+          <p>M4Y is a digital service provider that aims to provide software,
+              designing and  marketing solutions to individuals and
+              businesses.</p>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    
+                
+              <p class="socials">+91 9900777123<br>
+                Chat with us, and get a quotation ASAP</p>
+      </div>
+  </footer>
+</section>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="UTF-8">
+      <title>View for Client</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+   </head>
+   <body>
+
+    <center><h2 >Query View</h2></center>
+
+    {% csrf_token %}
+    <form action=""  >
+      <input type="search" placeholder="Search" name="search">
+      <button>Search</button>
+      
+    </form>
+    <p>Sort-by</p>
+    <select name="sort-by" >
+      <option value="name" selected>Name</option>
+      <option value="phonenumber">Phone</option>
+      <option value="email">Email</option>
+    </select>
+
+    
+
+    {% if query %}
+    <hr/>
+    <div class="Search"> 
+      {% for q in query %} 
+      <h3>Search Results with Message..</h3>
+      <ul>
+        <br>
+        <li><p>Name: {{q.name}}</p></li>
+        <li><p>Email: {{q.email}}</p></li>
+        <li><p>Phone: {{q.phonenumber}}</p></li>
+        <li><p>Message: {{q.message}}</p></li>
+        
+        <br>
+      </ul>
+      {% endfor %}
+    </div>
+    <hr/>
+    
+    {% endif %}
+    {% if queryName %}
+    <hr/>
+    <div class="Search"> 
+      {% for q in queryName %} 
+      <h3>Search Results with Name..</h3>
+      <ul>
+        <br>
+        <li><p>Name: {{q.name}}</p></li>
+        <li><p>Email: {{q.email}}</p></li>
+        <li><p>Phone: {{q.phonenumber}}</p></li>
+        <li><p>Message: {{q.message}}</p></li>
+        
+        <br>
+      </ul>
+      {% endfor %}
+    </div>
+    <hr/>
+    
+    {% endif %}
+    <br>
+
+    {% if queryPhone %}
+    <hr/>
+    <div class="Search"> 
+      {% for q in queryPhone %} 
+      <h3>Search Results with Phone..</h3>
+      <ul>
+        <br>
+        <li><p>Name: {{q.name}}</p></li>
+        <li><p>Email: {{q.email}}</p></li>
+        <li><p>Phone: {{q.phonenumber}}</p></li>
+        <li><p>Message: {{q.message}}</p></li>
+        
+        <br>
+      </ul>
+      {% endfor %}
+    </div>
+    <hr/>
+    
+    {% endif %}
+    <br>
+
+    {% if queryEmail %}
+    <hr/>
+    <div class="Search"> 
+      {% for q in queryEmail %} 
+      <h3>Search Results with Email..</h3>
+      <ul>
+        <br>
+        <li><p>Name: {{q.name}}</p></li>
+        <li><p>Email: {{q.email}}</p></li>
+        <li><p>Phone: {{q.phonenumber}}</p></li>
+        <li><p>Message: {{q.message}}</p></li>
+        
+        <br>
+      </ul>
+      {% endfor %}
+    </div>
+    <hr/>
+    
+    {% endif %}
+    <br>
+
+    <h3>All the Queries for M4Y services:</h3>
+      {% for contact in contact_list %}
+      <div class="singleQuery" >
+        <hr/>
+        <strong>{{ contact }}</strong>
+        <ul>
+          <li><p>Name: {{contact.name}}</p></li>
+          <li><p>Email: {{contact.email}}</p></li>
+          <li><p>Phone: {{contact.phonenumber}}</p></li>
+          <li><p>Message: {{contact.message}}</p></li>
+        </ul>
+        
+        <a href="delete/{{contact.phonenumber}}" onclick="return confirm('Are you sure about deleting {{contact.name}}.\nNote: After Deleting You will be need to goto VIEW again')">
+          <button>Delete</button></a>
+        <hr/>
+        <br>
+      </div>
+        {% endfor %}
+
+      
+
+    </ul>
+   </body>
