@@ -1,7 +1,7 @@
 {		**IMPORTANT**
  Backend: To view the queries can be accessed using *"/view"*
 	Eg: 
-	 [link]localhost:7000, or
+	 localhost:7000, or
 	http://127.0.0.1:7000/view 
 	(for my server, I would use)
 	
@@ -37,7 +37,7 @@ saved this project.
  			**IMPORTANT**
 * Backend: To view the queries can be accessed using *"/view"*
 	Eg: 
-	 [link]localhost:7000, or
+	 localhost:7000, or
 	http://127.0.0.1:7000/view 
 	(for my server, I would use)
 	
