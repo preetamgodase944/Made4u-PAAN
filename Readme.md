@@ -1,6 +1,7 @@
 {		**IMPORTANT**
  Backend: To view the queries can be accessed using *"/view"*
 	For Eg (for my server, I would use)	: http://127.0.0.1:7000/view 
+	or: localhost:7000
 	
 
 <h2>Made4You website:</h2>
@@ -35,6 +36,7 @@ saved this project.
 * Backend: To view the queries can be accessed using *"/view"*
 	Eg: http://127.0.0.1:7000/view 
 	(for my server, I would use)
+	or: [link]localhost:7000
 
 	This backend can be used to view the
 queries, search, delete and sort them. 
