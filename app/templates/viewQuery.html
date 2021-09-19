@@ -14,18 +14,20 @@
     {% csrf_token %}
     <form action=""  >
       <input type="search" placeholder="Search" name="search">
-      <button>Search</button>
+      <button>Search and Sort</button>
       
-    </form>
-    <p>Sort-by</p>
-    <select name="sort-by" >
-      <option value="name" selected>Name</option>
-      <option value="phonenumber">Phone</option>
-      <option value="email">Email</option>
-    </select>
-
     
+    <p>Sort-by</p>
+    <select name="sort" id="sort-list" >
+      <option value="sort" id="placeholder" selected >Sort</option>
+      <option value="name" id="name">Name</option>
+      <option value="phonenumber" id="phonenumber">Phone</option>
+      <option value="email" id="email">Email</option>
+    </select>
+  </form>
 
+    {%if query or queryPhone or queryEmail or queryName %}
+      
     {% if query %}
     <hr/>
     <div class="Search"> 
@@ -107,27 +109,118 @@
     
     {% endif %}
     <br>
+    
+    {% endif %}
+
+
+
 
     <h3>All the Queries for M4Y services:</h3>
-      {% for contact in contact_list %}
-      <div class="singleQuery" >
-        <hr/>
-        <strong>{{ contact }}</strong>
-        <ul>
-          <li><p>Name: {{contact.name}}</p></li>
-          <li><p>Email: {{contact.email}}</p></li>
-          <li><p>Phone: {{contact.phonenumber}}</p></li>
-          <li><p>Message: {{contact.message}}</p></li>
-        </ul>
-        
-        <a href="delete/{{contact.phonenumber}}" onclick="return confirm('Are you sure about deleting {{contact.name}}.\nNote: After Deleting You will be need to goto VIEW again')">
-          <button>Delete</button></a>
-        <hr/>
-        <br>
-      </div>
+    {% if sort %}
+      {% if sortbn %}
+        {% for contact in sortbn %}
+          <div class="singleQuery" >
+            <hr/>
+            <strong>{{ contact }}</strong>
+            <ul>
+              <li><p>Name: {{contact.name}}</p></li>
+              <li><p>Email: {{contact.email}}</p></li>
+              <li><p>Phone: {{contact.phonenumber}}</p></li>
+              <li><p>Message: {{contact.message}}</p></li>
+            </ul>
+
+            <a href="delete/{{contact.phonenumber}}" onclick="return confirm('Are you sure about deleting {{contact.name}}.\nNote: After Deleting You will be need to goto VIEW again')">
+              <button>Delete</button></a>
+            <hr/>
+            <br>
+          </div>
+          {% endfor %}
+      {% elif sortbem %}
+        {% for contact in sortbem %}
+
+          <div class="singleQuery" >
+            <hr/>
+            <strong>{{ contact }}</strong>
+            <ul>
+              <li><p>Name: {{contact.name}}</p></li>
+              <li><p>Email: {{contact.email}}</p></li>
+              <li><p>Phone: {{contact.phonenumber}}</p></li>
+              <li><p>Message: {{contact.message}}</p></li>
+            </ul>
+
+            <a href="delete/{{contact.phonenumber}}" onclick="return confirm('Are you sure about deleting {{contact.name}}.\nNote: After Deleting You will be need to goto VIEW again')">
+              <button>Delete</button></a>
+            <hr/>
+            <br>
+          </div>
         {% endfor %}
+      {% elif sortbpn %}
+        {% for contact in sortbpn %}
+
+          <div class="singleQuery" >
+            <hr/>
+            <strong>{{ contact }}</strong>
+            <ul>
+              <li><p>Name: {{contact.name}}</p></li>
+              <li><p>Email: {{contact.email}}</p></li>
+              <li><p>Phone: {{contact.phonenumber}}</p></li>
+              <li><p>Message: {{contact.message}}</p></li>
+            </ul>
+
+            <a href="delete/{{contact.phonenumber}}" onclick="return confirm('Are you sure about deleting {{contact.name}}.\nNote: After Deleting You will be need to goto VIEW again')">
+              <button>Delete</button></a>
+            <hr/>
+            <br>
+          </div>
+        {% endfor %}
+      {% elif sortbm%}
+        {% for contact in sortbm %}
+
+          <div class="singleQuery" >
+            <hr/>
+            <strong>{{ contact }}</strong>
+            <ul>
+              <li><p>Name: {{contact.name}}</p></li>
+              <li><p>Email: {{contact.email}}</p></li>
+              <li><p>Phone: {{contact.phonenumber}}</p></li>
+              <li><p>Message: {{contact.message}}</p></li>
+            </ul>
+          
+            <a href="delete/{{contact.phonenumber}}" onclick="return confirm('Are you sure about deleting {{contact.name}}.\nNote: After Deleting You will be need to goto VIEW again')">
+              <button>Delete</button></a>
+            <hr/>
+            <br>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      {% else %}
+      {% for contact in contact_list %}
+
+        <div class="singleQuery" >
+          <hr/>
+          <strong>{{ contact }}</strong>
+          <ul>
+            <li><p>Name: {{contact.name}}</p></li>
+            <li><p>Email: {{contact.email}}</p></li>
+            <li><p>Phone: {{contact.phonenumber}}</p></li>
+            <li><p>Message: {{contact.message}}</p></li>
+          </ul>
+
+          <a href="delete/{{contact.phonenumber}}" onclick="return confirm('Are you sure about deleting {{contact.name}}.\nNote: After Deleting You will be need to goto VIEW again')">
+            <button>Delete</button></a>
+          <hr/>
+          <br>
+        </div>
+          {% endfor %}
+
+    {% endif %}
+    
+      
 
       
 
     </ul>
    </body>
+
+   

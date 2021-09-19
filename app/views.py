@@ -40,22 +40,45 @@ def contact(request):
 def view(request):
     contact_list = Contact.objects.all()
     searched=request.GET.get('search')
-    sort='name'
+    sort=''
+    sortbpn=''
+    sortbn=''
+    sortbm=''
+    sortbem=''
+    sort=request.GET.get('sort')
+    que=''
     query=''
     queryName=''
     queryPhone=''
     queryEmail=''
     if searched!='' and searched is not None:
-        query=contact_list.filter(message__icontains=searched).order_by(sort)
-        queryName=contact_list.filter(name__icontains=searched).order_by(sort)
-        queryPhone=contact_list.filter(phonenumber__icontains=searched).order_by(sort)
-        queryEmail=contact_list.filter(email__icontains=searched).order_by(sort)
+        query=contact_list.filter(message__icontains=searched)
+        queryName=contact_list.filter(name__icontains=searched)
+        queryPhone=contact_list.filter(phonenumber__icontains=searched)
+        queryEmail=contact_list.filter(email__icontains=searched)
+        
+
+    if sort !='' and sort is not None:
+        if sort=='name':
+            sortbn=contact_list.order_by('name')
+        elif sort=='message':
+            sortbm=contact_list.order_by('message')
+        elif sort=='phoneNumber':
+            sortbpn=contact_list.order_by('phoneNumber')
+        else:
+            sortbem=contact_list.order_by('email')
+
+    
     context={
         'contact_list':contact_list ,
         'query':query,
         'queryName':queryName,
         'queryPhone':queryPhone,
-        'queryEmail':queryEmail
+        'queryEmail':queryEmail,
+        'sort':sort,
+        'sortbn':sortbn,
+        'sortbpn':sortbpn,
+        'sortbem':sortbem
     }
     return render(request, 'viewQuery.html',context)
 
