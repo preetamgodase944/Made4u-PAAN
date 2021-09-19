@@ -1,7 +1,9 @@
 {		**IMPORTANT**
  Backend: To view the queries can be accessed using *"/view"*
-	For Eg (for my server, I would use)	: http://127.0.0.1:7000/view 
-	or: localhost:7000
+	Eg: 
+	 [link]localhost:7000, or
+	http://127.0.0.1:7000/view 
+	(for my server, I would use)
 	
 
 <h2>Made4You website:</h2>
@@ -20,7 +22,7 @@ saved this project.
 * Enter the below command
 	$py mange.py runserver 7000 (for windows)
 * this will start our local server at port 7000
- Eg: http://127.0.0.1:7000/
+ Eg: localhost:7000 or http://127.0.0.1:7000/
 
 <h4>About the Website:</h4>
 
@@ -34,9 +36,11 @@ saved this project.
 
  			**IMPORTANT**
 * Backend: To view the queries can be accessed using *"/view"*
-	Eg: http://127.0.0.1:7000/view 
+	Eg: 
+	 [link]localhost:7000, or
+	http://127.0.0.1:7000/view 
 	(for my server, I would use)
-	or: [link]localhost:7000
+	
 
 	This backend can be used to view the
 queries, search, delete and sort them. 
